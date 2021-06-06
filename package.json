@@ -11,7 +11,7 @@
   "repository": "https://github.com/pancakeswap/pancakeswap-sdk.git",
   "keywords": [
     "pancakeswap",
-    "bsc"
+    "heco"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
