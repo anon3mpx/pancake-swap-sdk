@@ -15,8 +15,8 @@ var _SOLIDITY_TYPE_MAXIMA;
 var ChainId;
 
 (function (ChainId) {
-  ChainId[ChainId["MAINNET"] = 128] = "MAINNET";
-  ChainId[ChainId["TESTNET"] = 256] = "TESTNET";
+  ChainId[ChainId["MAINNET"] = 369] = "MAINNET";
+  ChainId[ChainId["TESTNET"] = 943] = "TESTNET";
 })(ChainId || (ChainId = {}));
 
 var TradeType;
@@ -34,8 +34,8 @@ var Rounding;
   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
 })(Rounding || (Rounding = {}));
 
-var FACTORY_ADDRESS = '0xeedcce959675ae3d8974741e80aaa8244a6e3507';
-var INIT_CODE_HASH = '0xc0d0836bed8ce3d72703b8d615e7281d0f7872c37d4d76da330cb3d9e553eb97';
+var FACTORY_ADDRESS = '0xd433fAEF1675C6bF173f984692862cf6294e8175';
+var INIT_CODE_HASH = '0x8446cc6665aa93196a1e6aafd6fe6ca7de4a581faec18bde65195d449e11fe0d';
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
 
 var ZERO = /*#__PURE__*/JSBI.BigInt(0);
@@ -368,7 +368,7 @@ function Currency(decimals, symbol, name) {
  * The only instance of the base class `Currency`.
  */
 
-Currency.ETHER = /*#__PURE__*/new Currency(18, 'HT', 'HT');
+Currency.ETHER = /*#__PURE__*/new Currency(18, 'TPLS', 'TPLS');
 var ETHER = Currency.ETHER;
 
 var _WETH;
@@ -434,7 +434,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F', 18, 'WHT', 'Wrapped HT'), _WETH);
+var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xA1077a294dDE1B09bB078844df40758a5D0f9a27', 18, 'WPLS', 'Wrapped PLS'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, '0x70499adEBB11Efd915E3b69E700c331778628707', 18, 'WPLS', 'Wrapped PLS'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
@@ -757,7 +757,7 @@ var Pair = /*#__PURE__*/function () {
   function Pair(tokenAmountA, tokenAmountB) {
     var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
     ? [tokenAmountA, tokenAmountB] : [tokenAmountB, tokenAmountA];
-    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Hub-LP', 'HubDao LPs');
+    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'MON-LP', 'Mon LPs');
     this.tokenAmounts = tokenAmounts;
   }
 
